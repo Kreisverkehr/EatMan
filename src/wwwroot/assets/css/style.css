@@ -1,0 +1,12 @@
+body {
+    padding-top: 5rem;
+}
+
+.pseudo-control-disabled {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+
+label.input-group-prepend {
+    margin-bottom: 0rem;
+}

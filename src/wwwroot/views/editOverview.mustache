@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    {{> header }}
+  </head>
+  <body>
+  
+    {{> navbar }}
+
+    <main role="main" class="container">
+      <a href="?view=editOverviewTable" class="float-right badge badge-pill badge-light">{{text.edit_overview_tableview}}</a>
+      {{> alert }}
+      <h1>{{text.edit_overview_title}}</h1>
+      <ul class="list-unstyled">
+        {{#dishes}}
+        <li class="media">
+          <div class="badge badge-dark mr-3" style="width: 64px; height:64px; display: block; font-size:20pt">#{{id}}</div>
+          <div class="media-body">
+            <h5 class="mt-0 mb-1">{{name}}</h5>
+            <p>{{description}}</p>
+            <p>
+              {{#tags}}
+              <div class="badge badge-pill badge-dark" style="margin: 3px">{{.}}</div>
+              {{/tags}}
+            </p>
+            <p>
+                <a class="btn btn-info" href="{{action_view}}" role="button"><i class="fas fa-eye"></i></a>
+                <a class="btn btn-primary" href="{{action_edit}}" role="button"><i class="fas fa-edit"></i></a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm{{id}}"><i class="fas fa-times"></i></button>
+            </p>
+          </div>
+        </li>
+        {{/dishes}}
+      </ul>
+    </main>
+
+    {{> editOverviewModals }}
+    {{> scripts }}
+  </body>
+</html>

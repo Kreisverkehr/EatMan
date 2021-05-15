@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    {{> header }}
+  </head>
+  <body>
+  
+    {{> navbar }}
+
+    <main role="main" class="container">
+      <a href="?view=editOverview" class="float-right badge badge-pill badge-light">{{text.edit_overview_listview}}</a>
+      {{> alert }}
+      <h1>{{text.edit_overview_title}}</h1>
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">{{text.edit_overview_tableview_col_id}}</th>
+              <th scope="col">{{text.edit_overview_tableview_col_name}}</th>
+              <th scope="col">{{text.edit_overview_tableview_col_tags}}</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#dishes}}
+            <tr>
+              <th scope="row">{{id}}</th>
+              <td>{{name}}</td>
+              <td>
+              {{#tags}}
+                <div class="badge badge-pill badge-dark" style="margin: 3px">{{.}}</div>
+              {{/tags}}
+              </td>
+              <td class="text-right">
+                <a class="btn btn-info" href="{{action_view}}" role="button"><i class="fas fa-eye"></i></a>
+                <a class="btn btn-primary" href="{{action_edit}}" role="button"><i class="fas fa-edit"></i></a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm{{id}}"><i class="fas fa-times"></i></button>
+              </td>
+            </tr>
+          {{/dishes}}
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    {{> editOverviewModals }}
+    {{> scripts }}
+  </body>
+</html>

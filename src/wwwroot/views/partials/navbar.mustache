@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">{{text.app_name}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item{{#navbar.homeActive}} active{{/navbar.homeActive}}">
+        <a class="nav-link" href="index.php">{{text.navbar_page_home}}{{#navbar.homeActive}}  <span class="sr-only">{{text.navbar_sr_current_page}}</span>{{/navbar.homeActive}}</a>
+      </li>
+      <li class="nav-item{{#navbar.newItemActive}} active{{/navbar.newItemActive}}">
+        <a class="nav-link" href="insert.php">{{text.navbar_page_new_item}}{{#navbar.newItemActive}}  <span class="sr-only">{{text.navbar_sr_current_page}}</span>{{/navbar.newItemActive}}</a>
+      </li>
+      <li class="nav-item{{#navbar.editItemActive}} active{{/navbar.editItemActive}}">
+        <a class="nav-link" href="edit.php">{{text.navbar_page_edit_item}}{{#navbar.editItemActive}}  <span class="sr-only">{{text.navbar_sr_current_page}}</span>{{/navbar.editItemActive}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

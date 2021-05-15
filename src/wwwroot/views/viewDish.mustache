@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    {{> header }}
+  </head>
+  <body>
+  
+    {{> navbar }}
+
+    <main role="main" class="container">
+        {{> alert }}
+        <h1>{{dishName}}</h1>
+        <p class="lead"><i class="fas fa-clock">&nbsp;</i>{{dishCookingTime}} Minuten</p>
+        <p>{{dishDescription}}</p>
+        {{#dishLink}}
+        <a class="badge badge-light" href="{{dishRecipeLocation}}" target="_blank" rel="noreferrer noopener"><i class="fas fa-link">&nbsp;</i>{{dishRecipeLocation}}</a>
+        {{/dishLink}}
+        {{#dishReference}}
+        <p><i class="fas fa-book">&nbsp;</i>{{dishRecipeLocation}}</p>
+        {{/dishReference}}
+        <p>
+          {{#tags}}
+          <div class="badge badge-pill badge-dark" style="margin: 3px">{{name}}</div>
+          {{/tags}}
+        </p>
+    </main>
+
+    {{> scripts }}
+  </body>
+</html>

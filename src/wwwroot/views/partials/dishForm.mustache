@@ -1,0 +1,55 @@
+<form method="post">
+    <div class="form-group">
+        <label for="nameInput">{{text.form_dish_input_name_lbl}}</label>
+        <input type="text" class="form-control" id="nameInput" name="name" value="{{dishName}}" placeholder="{{text.form_dish_input_name_ph}}" minlength="1">
+    </div>
+    <div class="form-group">
+        <label for="descriptionInput">{{text.form_dish_input_description_lbl}}</label>
+        <textarea class="form-control" id="descriptionInput" name="description" rows="3">{{dishDescription}}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="descriptionInput">{{text.form_dish_input_cookingtime_lbl}}</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-clock"></i></span>
+            </div>
+            <input type="number" class="form-control" id="cookingTimeInput" name="cookingTime" min="0" value="{{dishCookingTime}}" step="1"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="tagsSelect">{{text.form_dish_input_tags_lbl}}</label>
+        <div class="overflow-auto" style="height: 250px">
+        {{#tags}}
+        <div class="input-group mb-3">
+            <label class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="checkbox" value="{{id}}" name="tags[]" id="tagCB{{id}}" {{checkedState}}>
+                </div>
+            </label>
+            <label class="form-control pseudo-control-disabled" for="tagCB{{id}}">{{name}}</label>
+        </div>
+        {{/tags}}
+        <div class="copy-tag-input" style="display:none">
+            <div class="input-group mb-3 copy-tag-input">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" id="saveNewTag" name="newTag[]" value="{{saveNextTagValue}}">
+                    </div>
+                </div>
+                <input type="text" class="form-control" id="tagInput" name="newTag[]" placeholder="Neuer Tag">
+            </div>
+        </div>
+        <input type="button" class="btn btn-success addTag" value="Neuer Tag" id="addTag" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="descriptionInput">{{text.form_dish_input_recipelocation_lbl}}</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-link"></i></span>
+            </div>
+            <input class="form-control" id="recipeLocation" name="recipeLocation" value="{{dishRecipeLocation}}" placeholder="{{text.form_dish_input_recipelocation_ph}}" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">{{text.form_dish_btn_submit}}</button>
+</form>

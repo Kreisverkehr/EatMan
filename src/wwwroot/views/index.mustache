@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    {{> header }}
+  </head>
+  <body>
+  
+    {{> navbar }}
+
+    <main role="main" class="container">
+      {{> alert }}
+      <div class="jumbotron">
+        <h1 class="display-4">{{text.index_caption}}</h1>
+        <p class="lead">{{text.index_lead}}</p>
+        <hr class="my-4">
+        <p>{{text.index_intro}}</p>
+
+        <form method="post">
+        <div class="form-group">
+          <label for="cookingTimeRange" class="form-label">{{text.index_lbl_max_time}}</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-clock"></i></span>
+            </div>
+            <select class="form-control" name="maxCookingTime">
+              <option value="30">{{text.index_opt_max_time30}}</option>
+              <option value="60">{{text.index_opt_max_time60}}</option>
+              <option value="90">{{text.index_opt_max_time90}}</option>
+              <option value="120">{{text.index_opt_max_time120}}</option>
+              <option value="{{maxCookingTime}}" selected>{{text.index_opt_max_time_unlimited}}</option>
+            </select>
+            <!--<input type="number" class="form-control" id="cookingTimeRange" name="maxCookingTime" min="30" max="{{maxCookingTime}}" step="30" value="60">-->
+          </div>
+        </div>
+        {{#tags}}
+        <div class="input-group mb-3">
+            <label class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="checkbox" value="{{id}}" name="tags[]" id="tagCB{{id}}" {{checkedState}}>
+                </div>
+            </label>
+            <label role="input" class="form-control pseudo-control-disabled" for="tagCB{{id}}" disabled>{{name}}</label>
+        </div>
+        {{/tags}}
+
+        <button type="submit" class="btn btn-primary btn-lg">{{text.index_btn_submit}}</button>
+        </form>
+      </div>
+    </main>
+    {{> scripts }}
+  </body>
+</html>
