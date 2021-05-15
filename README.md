@@ -140,9 +140,8 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+* Click on "Add dish" do start adding your dishes.
+* You are now ready to get suggestions from the start page. Just click "Make a suggestion!"
 
 
 
@@ -176,9 +175,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/Kreisverkehr/EatMan](https://github.com/Kreisverkehr/EatMan)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
