@@ -126,7 +126,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    sudo mysql
    mysql>CREATE DATABASE EatMan
-   sudo mysql EatMan < src/setup/createdb.sql
+   sudo mysql EatMan < ../setup/createdb.sql
    ```
 5. Enter your mysql user in `src/wwwroot/sys/settings.php`
    ```php
