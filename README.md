@@ -113,6 +113,10 @@ This is an example of how to list things you need to use the software and how to
    git clone https://github.com/Kreisverkehr/EatMan.git
    ```
 2. Install Composer
+   ```sh
+   cd src/wwwroot
+   ./../setup/installcomposer.sh
+   ```
    https://getcomposer.org/download/
 3. Install Dependencies
    ```sh
