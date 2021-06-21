@@ -101,20 +101,26 @@ This is an example of how to list things you need to use the software and how to
 * php
 * mysql
   ```sh
-  sudo apt install git apache mysql php
+  sudo apt install git apache2 mysql-server php php-mysqli
   ```
 
 ### Installation
 
+#### Option 1: Run the automated installer
+```sh
+curl -s https://raw.githubusercontent.com/Kreisverkehr/EatMan/main/src/setup/install.sh | bash -s
+```
+
+#### Option 2: Manual install
+
 1. Clone the repo
    ```sh
-   mkdir /opt/eat-man
-   cd /opt/eat-man
+   cd /opt/
    git clone https://github.com/Kreisverkehr/EatMan.git
    ```
 2. Install Composer
    ```sh
-   cd src/wwwroot
+   cd EatMan/src/wwwroot
    ./../setup/installcomposer.sh
    ```
    https://getcomposer.org/download/
@@ -124,8 +130,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 4. Create Database
    ```sh
-   sudo mysql
-   mysql>CREATE DATABASE EatMan
+   sudo mysql -e "CREATE DATABASE EatMan"
    sudo mysql EatMan < ../setup/createdb.sql
    ```
 5. Enter your mysql user in `src/wwwroot/sys/settings.php`
@@ -136,7 +141,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 6. Create symlink
    ```sh
-   sudo ln -s /opt/eat-man/src/wwwroot/ /var/www/html/eat-man
+   sudo ln -s /opt/EatMan/src/wwwroot/ /var/www/html/EatMan
    ```
 
 
