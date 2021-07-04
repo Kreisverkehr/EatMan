@@ -4,7 +4,7 @@
     "type": "project",
     "require": {
         "mustache/mustache": "~2.5",
-        "twbs/bootstrap": "^5.0",
+        "twbs/bootstrap": "^4.6",
         "components/jquery": "^3.5",
         "fortawesome/font-awesome": "^5.15"
     }
