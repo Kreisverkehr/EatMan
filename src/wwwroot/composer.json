@@ -1,5 +1,5 @@
 {
-    "name": "EatMan",
+    "name": "eat-man",
     "description": "Have you ever faced the problem that you do not know what to cook today? Have you then thought for hours and rummaged through cookbooks? This is where EatMan comes in. He takes the decision away from you by making a random suggestion. Only dishes that EatMan knows and that you have entered yourself are taken into account.",
     "type": "project",
     "require": {
