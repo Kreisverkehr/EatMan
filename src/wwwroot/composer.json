@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "mustache/mustache": "~2.5",
-        "twbs/bootstrap": "^4.6",
+        "twbs/bootstrap": "^5.0",
         "components/jquery": "^3.5",
         "fortawesome/font-awesome": "^5.15"
     }
