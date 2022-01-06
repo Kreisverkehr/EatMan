@@ -43,6 +43,7 @@ cd ../../
 # create settings
 cd src/wwwroot/sys/
 echo "<?php" > settings.php
+echo "\$db_host = \"localhost\";" >> settings.php
 echo "\$db_user = \"$MAINDB\";" >> settings.php
 echo "\$db_pass = \"$PASSWDDB\";" >> settings.php
 cd ../../../

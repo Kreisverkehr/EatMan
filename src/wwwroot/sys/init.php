@@ -1,8 +1,9 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 require 'lang.php';
+error_reporting(0);
 
-$mysqli = new mysqli("localhost", $db_user, $db_pass, "EatMan");
+$mysqli = new mysqli($db_host, $db_user, $db_pass, "EatMan");
 
 $mustache = new Mustache_Engine(array(
     // 'template_class_prefix' => '__tpl_',

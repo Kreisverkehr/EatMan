@@ -1,3 +1,10 @@
+CREATE TABLE `EatMan`.`db_version` (
+  `version` INT NOT NULL,
+  PRIMARY KEY (`version`))
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_bin;
+insert into `EatMan`.`db_version` values(1);
+
 CREATE TABLE `EatMan`.`tags` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,

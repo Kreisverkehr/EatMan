@@ -1,0 +1,55 @@
+version: '3.4'
+
+services:
+
+  db:
+    image: mysql:latest
+    # ports:
+    #   - 3306:3306/tcp
+    environment: 
+      - MYSQL_ROOT_PASSWORD=superSecretPassword
+      - MYSQL_DATABASE=EatMan
+      - MYSQL_USER=EatMan
+      - MYSQL_PASSWORD=EatManPass
+    volumes:
+      - mysqldata:/var/lib/mysql:rw
+
+  app:
+    image: kreisverkehr/eatman:latest
+    build: .
+    ports:
+      - 8080:80/tcp
+    environment:
+      - EM_DBHOST=db
+      - EM_DBUSER=EatMan
+      - EM_DBPASS=EatManPass
+      - WAIT_HOSTS=db:3306
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=30
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+    links:
+      - db
+    depends_on:
+      - db
+  
+  # phpmyadmin:
+  #   image: phpmyadmin:latest
+  #   ports:
+  #     - 8081:80/tcp
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=superSecretPassword
+  #     - PMA_HOST=db
+  #   depends_on:
+  #     - db
+  
+  # adminer:
+  #   image: adminer:latest
+  #   ports:
+  #     - 8082:8080/tcp
+  #   environment:
+  #     - ADMINER_DEFAULT_SERVER=db
+  #   depends_on:
+  #     - db
+
+volumes:
+  mysqldata:

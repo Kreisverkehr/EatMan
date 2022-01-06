@@ -70,7 +70,7 @@ if($_GET['action'] == 'delete')
     $data['alert']['message'] = "Das Gericht \"".$dishName."\" wurde gelöscht.";
 }
 
-if($_GET{'action'} == 'edit')
+if($_GET['action'] == 'edit')
 {
     if($_SERVER['REQUEST_METHOD'] == 'GET')
     {
@@ -216,7 +216,10 @@ foreach ($data['dishes'] as $dishID => $dish)
     $data['dishes'][$dishID]['tags'] = new ArrayIterator($data['dishes'][$dishID]['tags']);
 }
 $tagSelect->close();
-$data['dishes'] = new ArrayIterator($data['dishes']);
+if(!is_null($data['dishes']))
+{
+    $data['dishes'] = new ArrayIterator($data['dishes']);
+}
 
 if(empty($_GET['view'])) $view = 'editOverviewTable';
 else $view = $_GET['view'];
