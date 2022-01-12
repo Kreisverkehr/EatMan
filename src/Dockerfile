@@ -11,8 +11,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN php composer.phar install
-RUN rm -rf composer*
 COPY ./wwwroot/ .
+RUN rm -rf composer*
 RUN mv sys/settings.docker.php sys/settings.php
 
 FROM php:apache
@@ -24,8 +24,9 @@ RUN apt update && apt install -y \
     && rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-install mysqli && \
     docker-php-ext-enable mysqli
-COPY ./setup/createdb.sql /opt
-COPY ./docker/eatman-start.sh /opt
+COPY ./setup/createdb.sql /opt/
+COPY ./docker/eatman-start.sh /opt/
+RUN chmod -R 777 /opt
 COPY --from=build /var/www/html /var/www/html
 ENV EM_DBHOST=mysql EM_DBUSER=EatMan EM_DBPASS=EatManPass
 WORKDIR /opt
