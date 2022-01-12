@@ -1,0 +1,13 @@
+* text=auto
+
+*.css text
+*.php text
+*.mustache text
+*.yml text
+*.json text
+*.lock text
+
+*.sh text eol=lf
+
+*.png binary
+*.jpg binary
