@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0ada7b5d1e46dbd30be981b8ea517c9",
+    "content-hash": "41b5e387893d86401c6964511eb8f442",
     "packages": [
         {
             "name": "components/jquery",
@@ -57,16 +57,16 @@
         },
         {
             "name": "fortawesome/font-awesome",
-            "version": "5.15.4",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "7d3d774145ac38663f6d1effc6def0334b68ab7e"
+                "reference": "65f4bdb5025759ba25cd3432568de288b6a67527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/7d3d774145ac38663f6d1effc6def0334b68ab7e",
-                "reference": "7d3d774145ac38663f6d1effc6def0334b68ab7e",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/65f4bdb5025759ba25cd3432568de288b6a67527",
+                "reference": "65f4bdb5025759ba25cd3432568de288b6a67527",
                 "shasum": ""
             },
             "type": "library",
@@ -78,32 +78,8 @@
             ],
             "authors": [
                 {
-                    "name": "Travis Chase",
-                    "homepage": "http://twitter.com/supercodepoet"
-                },
-                {
-                    "name": "Dave Gandy",
-                    "homepage": "http://twitter.com/davegandy"
-                },
-                {
-                    "name": "Rob Madole",
-                    "homepage": "http://twitter.com/robmadole"
-                },
-                {
-                    "name": "Jory Raphael",
-                    "homepage": "http://twitter.com/sensibleworld"
-                },
-                {
-                    "name": "Geremia Taglialatela",
-                    "homepage": "http://twitter.com/gtagliala"
-                },
-                {
-                    "name": "Brian Talbot",
-                    "homepage": "http://twitter.com/talbs"
-                },
-                {
-                    "name": "Mike Wilkerson",
-                    "homepage": "http://twitter.com/mw77"
+                    "name": "The Font Awesome Team",
+                    "homepage": "https://github.com/orgs/FortAwesome/people"
                 }
             ],
             "description": "The iconic font, CSS, and SVG framework",
@@ -117,12 +93,12 @@
                 "svg"
             ],
             "support": {
-                "docs": "http://fontawesome.com/how-to-use",
+                "docs": "http://fontawesome.com/docs",
                 "email": "hello@fontawesome.com",
                 "issues": "https://github.com/FortAwesome/Font-Awesome/issues",
                 "source": "https://github.com/FortAwesome/Font-Awesome"
             },
-            "time": "2021-08-04T19:09:22+00:00"
+            "time": "2022-02-07T20:16:51+00:00"
         },
         {
             "name": "mustache/mustache",
