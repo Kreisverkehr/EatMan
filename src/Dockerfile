@@ -16,9 +16,6 @@ RUN rm -rf composer*
 RUN mv sys/settings.docker.php sys/settings.php
 
 FROM php:apache
-ENV WAIT_VERSION 2.9.0
-ADD https://github.com/ufoscout/docker-compose-wait/releases/download/$WAIT_VERSION/wait /wait
-RUN chmod +x /wait
 RUN apt update && apt install -y \
     default-mysql-client-core \
     && rm -rf /var/lib/apt/lists/*
@@ -26,6 +23,7 @@ RUN docker-php-ext-install mysqli && \
     docker-php-ext-enable mysqli
 COPY ./setup/createdb.sql /opt/
 COPY ./docker/eatman-start.sh /opt/
+COPY ./docker/wait-for-it.sh /opt/
 RUN chmod -R 777 /opt
 COPY --from=build /var/www/html /var/www/html
 ENV EM_DBHOST=mysql EM_DBUSER=EatMan EM_DBPASS=EatManPass

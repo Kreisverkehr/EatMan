@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Waiting for database ..."
-/wait
+./wait-for-it.sh -t 0 $EM_DBHOST:3306
 echo "Checking if table <db_version> exists ..."
 
 # Check if table exists
