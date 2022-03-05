@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Waiting for database ..."
 ./wait-for-it.sh -t 0 $EM_DBHOST:3306
