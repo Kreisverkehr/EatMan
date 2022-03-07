@@ -13,4 +13,4 @@ else
     mysql -h $EM_DBHOST -u$EM_DBUSER -p$EM_DBPASS EatMan < createdb.sql
 fi
 
-docker-php-entrypoint apache2-foreground
+docker-php-entrypoint $1

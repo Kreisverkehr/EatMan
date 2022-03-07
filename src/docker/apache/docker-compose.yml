@@ -15,8 +15,10 @@ services:
       - mysqldata:/var/lib/mysql:rw
 
   app:
-    image: kreisverkehr/eatman:latest
-    build: .
+    image: kreisverkehr/eatman:apache
+    build:
+      context: ../../../
+      dockerfile: ./src/docker/apache/Dockerfile
     ports:
       - 8080:80/tcp
     environment:

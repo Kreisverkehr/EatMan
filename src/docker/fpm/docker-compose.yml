@@ -1,0 +1,79 @@
+version: '3.4'
+
+services:
+
+  db:
+    image: mysql:latest
+    # ports:
+    #   - 3306:3306/tcp
+    environment: 
+      - MYSQL_ROOT_PASSWORD=superSecretPassword
+      - MYSQL_DATABASE=EatMan
+      - MYSQL_USER=EatMan
+      - MYSQL_PASSWORD=EatManPass
+    volumes:
+      - mysqldata:/var/lib/mysql:rw
+
+  app:
+    image: kreisverkehr/eatman:fpm
+    build:
+      context: ../../../
+      dockerfile: ./src/docker/apache/Dockerfile
+    volumes:
+      - wwwdata:/var/www/html
+    environment:
+      - EM_DBHOST=db
+      - EM_DBUSER=EatMan
+      - EM_DBPASS=EatManPass
+      - WAIT_HOSTS=db:3306
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=30
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+    depends_on:
+      - db
+  
+  web:
+    image: nginx:alpine
+    volumes:
+      - wwwdata:/var/www/html:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    environment:
+      - VIRTUAL_HOST=eatman.local
+      - LETSENCRYPT_HOST=
+      - LETSENCRYPT_EMAIL=
+    depends_on:
+      - app
+
+  proxy:
+    image: nginxproxy/nginx-proxy:alpine
+    restart: always
+    ports:
+      - 8080:80
+      - 8443:443
+    labels:
+      com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
+    volumes:
+      - certs:/etc/nginx/certs:ro
+      - vhost.d:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  letsencrypt-companion:
+    image: nginxproxy/acme-companion
+    restart: always
+    volumes:
+      - certs:/etc/nginx/certs
+      - acme:/etc/acme.sh
+      - vhost.d:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    depends_on:
+      - proxy
+
+volumes:
+  mysqldata:
+  wwwdata:
+  certs:
+  acme:
+  vhost.d:
+  html:
