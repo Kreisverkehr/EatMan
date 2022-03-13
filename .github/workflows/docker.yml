@@ -41,4 +41,4 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: retag latest image
-      run: docker buildx imagetools create ${{ secrets.DOCKERHUB_USER }}/eatman:apache --tag ${{ secrets.DOCKERHUB_USER }}/eatman:latest
+      run: docker buildx imagetools create ${{ secrets.DOCKERHUB_USERNAME }}/eatman:apache --tag ${{ secrets.DOCKERHUB_USERNAME }}/eatman:latest
