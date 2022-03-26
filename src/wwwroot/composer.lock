@@ -57,16 +57,16 @@
         },
         {
             "name": "fortawesome/font-awesome",
-            "version": "6.1.0",
+            "version": "6.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "307f2c15e2d3bdf465b43df0d1486dcd249df2a1"
+                "reference": "28e297f07af26f148c15e6cbbd12cea3027371d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/307f2c15e2d3bdf465b43df0d1486dcd249df2a1",
-                "reference": "307f2c15e2d3bdf465b43df0d1486dcd249df2a1",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/28e297f07af26f148c15e6cbbd12cea3027371d3",
+                "reference": "28e297f07af26f148c15e6cbbd12cea3027371d3",
                 "shasum": ""
             },
             "type": "library",
@@ -98,7 +98,7 @@
                 "issues": "https://github.com/FortAwesome/Font-Awesome/issues",
                 "source": "https://github.com/FortAwesome/Font-Awesome"
             },
-            "time": "2022-03-15T19:08:55+00:00"
+            "time": "2022-03-22T15:24:29+00:00"
         },
         {
             "name": "mustache/mustache",
